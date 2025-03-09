@@ -19,12 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
-from main.views import MainPageView
+from main.views import MainPageView, ThanksView
+
+
 
 urlpatterns = (
     [
         path("admin/", admin.site.urls),
         path('', MainPageView.as_view(), name='main_page'),
+        path('thanks/', ThanksView.as_view(), name='thanks_page')
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
