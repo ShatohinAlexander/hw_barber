@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+{% block content %}
+<section class="text-center fs-3">
+    🌟 Добро пожаловать в наш барбершоп! 🌟<br>
+
+Ищете стильную стрижку или идеальную бороду? Мы – команда профессиональных барберов, готовых создать для вас уникальный образ! 💈
+</section>
+<hr>
+<section class="text-center fs-4" id="services">
+    <p>Прайс лист:</p>
+    <ul class="list-unstyled">
+        {% for el in services %}
+            <li >{{el.name}} ••••••••• {{el.price}}</li>
+        {% endfor %}
+    </ul>
+</section>
+<hr>
+<section>
+    <p>Список мастеров</p>
+    <div class="row text-center">
+        {% for el in masters %}
+        <div class="col">
+            <img src="{{el.photo.url}}" alt="Фото мастера" style="max-width:100px ;">
+            {{el.first_name}} {{el.last_name}}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}
+
