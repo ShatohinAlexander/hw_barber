@@ -1,21 +1,22 @@
 {% extends "main/base.html" %}
 {% block content %}
-<section class="text-center fs-3">
+<section class="text-center fs-3 my-5">
     🌟 Добро пожаловать в наш барбершоп! 🌟<br>
 
-Ищете стильную стрижку или идеальную бороду? Мы – команда профессиональных барберов, готовых создать для вас уникальный образ! 💈
+    Ищете стильную стрижку или идеальную бороду? Мы – команда профессиональных барберов, готовых создать для вас
+    уникальный образ! 💈
 </section>
 <hr>
-<section class="text-center fs-4" id="services">
+<section class="text-center fs-4  my-5" id="services">
     <p>Прайс лист:</p>
     <ul class="list-unstyled">
         {% for el in services %}
-            <li >{{el.name}} ••••••••• {{el.price}}</li>
+        <li>{{el.name}} ••••••••• {{el.price}}</li>
         {% endfor %}
     </ul>
 </section>
 <hr>
-<section>
+<section id="masters" class=" my-5">
     <p>Список мастеров</p>
     <div class="row text-center">
         {% for el in masters %}
@@ -26,5 +27,15 @@
         {% endfor %}
     </div>
 </section>
-{% endblock content %}
+<hr>
+<section id="orderForm" class=" my-5">
+    <p class="my-4 fs-2 text-center">Форма записи</p>
+    <form action="{% url 'thanks_page' %}" method=" post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="w-100 btn btn-light" value="Отправить">
 
+    </form>
+
+</section>
+{% endblock content %}

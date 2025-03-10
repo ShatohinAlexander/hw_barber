@@ -1,4 +1,5 @@
 venv
+.venv
 PYTHON422 HW №29.md
 db.sqlite3
 .vscode

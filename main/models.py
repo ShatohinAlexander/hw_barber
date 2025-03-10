@@ -10,7 +10,7 @@ class Master(models.Model):
         "Service", verbose_name="Услуги", related_name="masters"
     )
 
-    def str(self):
+    def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
     class Meta:
@@ -21,8 +21,8 @@ class Master(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=100, verbose_name="Название услуги")
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
-    # master = models.ManyToManyField(
-    #     Master, verbose_name="Мастер", related_name="service", default=None, blank=True
+    master = models.ManyToManyField(
+        Master, verbose_name="Мастер", related_name="service", default=None, blank=True)
 
     def __str__(self):
         return f"{self.name}"

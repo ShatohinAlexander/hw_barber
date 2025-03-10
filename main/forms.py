@@ -8,8 +8,21 @@ class VisitForm(forms.ModelForm):
         model = Visit
         fields = ["name", "phone", "comment", "master", "services"]
         widgets = {
+            'name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Ваше имя'
+            }),
+            'phone': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Ваш телефон'
+            }),
+            'comment': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Комментарий',
+                'rows': 4
+            }),
             "master": forms.Select(attrs={"class": "form-select text-center"}),
-            "services": forms.SelectMultiple(attrs={"class": "form-select text-center" , "style": "margin-top: 10px;"})
+            "services": forms.SelectMultiple(attrs={"class": "form-select text-center text-dark" , "style": "margin-top: 10px; color:black;"})
         }
 
 
