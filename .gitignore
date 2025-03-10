@@ -1,6 +1,5 @@
 venv
 .venv
-PYTHON422 HW №29.md
 db.sqlite3
 .vscode
 *.pyc
@@ -8,4 +7,6 @@ pycache/
 .pylintrc
 media
 .env
+PYTHON422 HW №29.md
 PYTHON422 HW №30.md
+PYTHON422 HW №31.md
