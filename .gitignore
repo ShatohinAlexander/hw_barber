@@ -1,2 +1,9 @@
 venv
 PYTHON422 HW №29.md
+db.sqlite3
+.vscode
+*.pyc
+pycache/
+.pylintrc
+media
+.env
