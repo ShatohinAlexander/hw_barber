@@ -16,6 +16,17 @@
     </ul>
 </section>
 <hr>
+
+<section class="text-center fs-4  my-5" id="reviews">
+    <p>Отзывы:</p>
+    <ul class="list-unstyled">
+        {% for el in reviews %}
+        <li>{{el.text}} ••••••••• {{el.rating}}</li>
+        {% endfor %}
+    </ul>
+</section>
+<hr>
+
 <section id="masters" class=" my-5">
     <p>Список мастеров</p>
     <div class="row text-center">

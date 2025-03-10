@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<section id="orderForm" class=" my-5">
+    <p class="my-4 fs-2 text-center">Оставьте отзыв</p>
+    <form action="{% url 'review_create' %}" method=" post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="w-100 btn btn-light" value="Отправить">
+
+    </form>
+
+</section>
+
+{% endblock content %}
